@@ -1,9 +1,11 @@
-import { useContext, useRef } from "react";
-import { ThemeContext, ThemeProvider } from "./ThemeContext";
+import { useRef } from "react";
+import { ThemeProvider } from "./ThemeContext";
+import { useTheme } from "../hooks/useTheme";
 
 function AppContent() {
-  const { theme, toggleTheme } = useContext(ThemeContext)
-  const inputRef = useRef(null); 
+  const { theme, toggleTheme } = useTheme();
+  const inputRef = useRef(null);
+
   const focusInput = () => {
     inputRef.current.focus();
   };
